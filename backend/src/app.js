@@ -1,7 +1,7 @@
 require("dotenv").config({
   path:
     process.env.NODE_ENV == "test"
-      ? "./dotenv/config.test.env"
+      ? "./dotenv/config.env.test"
       : "./dotenv/config.env",
 });
 

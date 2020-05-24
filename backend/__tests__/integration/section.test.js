@@ -1,6 +1,6 @@
 let path;
 if (process.env.NODE_ENV == "test") {
-  path = "./dotenv/config.test.env";
+  path = "./dotenv/config.env.test";
 } else {
   path = "./dotenv/config.env";
 }
