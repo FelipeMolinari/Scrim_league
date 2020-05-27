@@ -3,7 +3,7 @@ const User = require("../models/User");
 const verifyToken = async (jwt_payload, done) => {
   try {
     const user = await User.findOne({
-      where: { email: jwt_payload.user.email },
+      where: { id: jwt_payload.user_id },
     });
 
     if (user) {

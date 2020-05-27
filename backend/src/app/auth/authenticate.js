@@ -1,11 +1,8 @@
 const User = require("../models/User");
-const sectionStoreValidation = require("../validation/sectionStore");
 
 const authenticateUser = async (email, password, done) => {
   try {
-    if (!(await sectionStoreValidation(email, password))) {
-      return done(null, false, { message: "Validation fails" });
-    }
+
     const userExist = await User.findOne({ where: { email } });
     if (userExist) {
       const passwordsMatch = await userExist.checkPassword(password);

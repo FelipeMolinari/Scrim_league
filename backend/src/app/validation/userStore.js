@@ -11,6 +11,7 @@ async function validation(body) {
   if (!(await schema.isValid(body))) {
     return false;
   }
+
   return true;
 }
 

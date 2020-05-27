@@ -1,3 +1,4 @@
+
 const User = require("../models/User");
 
 const facebookAuth = async (accessToken, refreshToken, profile, done) => {
@@ -26,3 +27,24 @@ const facebookAuth = async (accessToken, refreshToken, profile, done) => {
 };
 
 module.exports = facebookAuth;
+
+// const facebookAuth = async (accessToken, refreshToken, profile, done) => {
+//   const { email, id, first_name, last_name } = profile._json;
+//   try {
+//     console.log(profile)
+//     const newUser = {
+//       firstName: first_name,
+//       lastName: last_name,
+//       email,
+//       facebookId: id,
+//     };
+
+//     return done(null, newUser, {
+//       message: "User accepted",
+//     });
+//   } catch (err) {
+//     return done(err);
+//   }
+// };
+
+// module.exports = facebookAuth;

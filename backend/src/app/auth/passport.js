@@ -4,7 +4,6 @@ const JWTStrategy = passportJWT.Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 
-require("dotenv").config({ path: "./dotenv/config.env" });
 
 const authenticateUser = require("./authenticate");
 const verifyToken = require("./verifyToken");

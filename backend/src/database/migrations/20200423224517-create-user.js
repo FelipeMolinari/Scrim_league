@@ -35,10 +35,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      teste: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
 
       password_hash: {
         type: Sequelize.STRING,

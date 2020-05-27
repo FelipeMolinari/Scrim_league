@@ -17,15 +17,3 @@ describe("Dotenv", () => {
   });
 });
 
-describe("Authentication", () => {
-  it("Should sum two numbers", async () => {
-    const a = 2;
-    const b = 4;
-    const sum = a + b;
-    expect(sum).toBe(6);
-  });
-});
-
-// it('Should receive JWT token when authenticated with valid credentials.', ()=>{
-
-// })

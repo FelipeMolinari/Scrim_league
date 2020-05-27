@@ -8,12 +8,12 @@ class Player extends Model {
       {
         timestamps: true,
         sequelize,
-        tableName: "player",
+        tableName: "players",
       }
     );
     return this;
   }
-  static associate(models) {}
+  static associate(models) { }
   async checkPassword(password) {
     return await bcrypt.compare(password, this.password_hash);
   }

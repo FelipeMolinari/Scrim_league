@@ -3,8 +3,7 @@ const passport = require("passport");
 
 const UserController = require("./app/Controllers/UserController");
 const SectionController = require("./app/Controllers/SectionController");
-const FacebookSectionController = require("./app/Controllers/FacebookSectionController");
-
+const auth = require("./app/auth/auth")
 const routes = new Router();
 
 //Public Routes:
@@ -19,13 +18,22 @@ routes.get(
   passport.authenticate("facebook", {
     session: false,
     scope: ["email"],
+  }, async (err, user, info) => {
+    console.log(info)
+    console.log("AHUASHUASHUSAHU", user)
   })
 );
 
-routes.get("/user/facebook/callback", FacebookSectionController.store);
 
-// Section
-routes.post("/login", SectionController.store);
+// Sections
+
+routes.get(
+  "/user/facebook/callback",
+  auth.facebookAuth,
+  SectionController.store
+);
+
+routes.post("/login", auth.localAuth, SectionController.store);
 
 //Secure Routes:
 

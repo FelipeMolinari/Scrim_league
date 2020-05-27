@@ -1,8 +1,12 @@
+let path;
+if (process.env.NODE_ENV == "test") {
+  path = "./dotenv/config.env.test";
+} else {
+  path = "./dotenv/config.env";
+}
+
 require("dotenv").config({
-  path:
-    process.env.NODE_ENV == "test"
-      ? "./dotenv/config.test.env"
-      : "./dotenv/config.env",
+  path
 });
 
 module.exports = {
