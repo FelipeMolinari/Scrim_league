@@ -7,9 +7,10 @@ module.exports = {
     passport.authenticate("facebook", async (err, user) => {
       try {
         if (err || !user) {
-          return next(error);
+          return next(err);
         }
         req.user = user;
+
         return next();
       } catch (error) {
         return next(error);

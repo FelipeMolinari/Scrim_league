@@ -39,7 +39,6 @@ class UserController {
         return res.status(401).json({ error: "Validation fails" });
       }
       const { oldpassword } = req.body;
-      console.log(oldpassword)
       const user = await User.findByPk(req.user.id);
 
       if (oldpassword && !(await user.checkPassword(oldpassword))) {

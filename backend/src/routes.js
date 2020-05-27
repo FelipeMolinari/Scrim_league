@@ -18,9 +18,6 @@ routes.get(
   passport.authenticate("facebook", {
     session: false,
     scope: ["email"],
-  }, async (err, user, info) => {
-    console.log(info)
-    console.log("AHUASHUASHUSAHU", user)
   })
 );
 
