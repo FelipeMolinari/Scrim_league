@@ -51,6 +51,23 @@ describe('User', () => {
 
 		expect(compareHash).toBe(true);
 	});
+
+	it('Should return Password does not match', async () => {
+		try {
+			await request(app).post('/user').send({
+				firstName: 'Felipe',
+				lastName: 'Molinari',
+				password: '123123',
+				email: 'jaajasj@gmail.com'
+			});
+			await request(app).post('/login').send({
+				email: 'jaajasj@gmail.com',
+				password: '123123123123'
+			});
+		} catch (error) {
+			expect(error).toEqual('An Error occured - Password does not match');
+		}
+	});
 });
 
 // SECURES
@@ -72,6 +89,12 @@ describe('Secures Routes', () => {
 
 		token = response.body.token;
 		done();
+	});
+
+	it('Should require authorization', async () => {
+		const response = await request(app).get('/login/update').send({ gender: 'male' });
+
+		expect(response.statusCode).toBe(401);
 	});
 
 	it('Should require authorization', async () => {
