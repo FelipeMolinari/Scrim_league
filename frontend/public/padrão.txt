@@ -1,0 +1,3 @@
+/* TEXTOS */
+
+principal: 26px;

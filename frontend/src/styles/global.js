@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 // export const Container = styled.div`
 //   display: grid;
@@ -12,13 +12,17 @@ import { createGlobalStyle } from "styled-components";
 // `;
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro&display=swap');
+
+
 * {
+
+
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   outline: 0px
 }
+
 html,
     body,
     #root {
